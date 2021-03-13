@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/account_controller.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/app_bar/home_page_appbar.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/home_page_drawer.dart';
+
 import 'package:get/get.dart';
 
 import 'package:percent_indicator/percent_indicator.dart';
 
-import 'package:flutter_aba_clone_learning/presentation/widget/custom_appbar.dart';
+import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/custom_appbar.dart';
 
 class AccountPage extends StatelessWidget {
   final AccountController accountController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: accountController.scaffoldState,
       backgroundColor: Color(0xffE7EFF2),
-      drawer: homePageDrawer(),
-      appBar: customAppbar(
-          title: 'ABA\' Accounts', globalKey: accountController.scaffoldState),
+      appBar: CustomAppBar(
+        title: 'ABA\' Accounts',
+        leftIcon: Icons.arrow_back_ios,
+        leftIconOnPress: () {
+          Get.back();
+        },
+        listIcon: [],
+      ),
       body: Column(
         children: [
           accountSummaryBar(),

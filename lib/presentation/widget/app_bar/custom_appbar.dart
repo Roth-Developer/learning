@@ -4,49 +4,52 @@ import 'package:flutter_aba_clone_learning/presentation/controller/home_controll
 
 import 'package:get/get.dart';
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final corentRoute = Get.currentRoute;
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final HomeController homeController = Get.find();
+  final IconData leftIcon;
+  final Function leftIconOnPress;
 
   final String title;
   final List<Widget> listIcon;
   @override
   final Size preferredSize;
 
-  MyAppBar({@required this.title, this.listIcon})
-      : preferredSize = Size.fromHeight(45);
+  CustomAppBar(
+      {@required this.title,
+      this.listIcon,
+      this.leftIcon,
+      this.leftIconOnPress})
+      : preferredSize = Size.fromHeight(50);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        height: 45,
+        height: double.infinity,
         color: Colore.appBarColor,
         child: Padding(
-          padding: const EdgeInsets.only(left: 10),
+          padding: const EdgeInsets.all(5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
                 children: [
                   Container(
                     child: IconButton(
-                      icon: Icon(Icons.menu),
-                      onPressed: () {
-                        homeController.scaffoldState.currentState.openDrawer();
-                        print(corentRoute);
-                      },
+                      icon: Icon(
+                        leftIcon,
+                        color: Colors.white,
+                      ),
+                      onPressed: leftIconOnPress,
                     ),
-                  ),
-                  SizedBox(
-                    width: 10,
                   ),
                   Text(
                     title,
                     style: TextStyle(
                         fontWeight: FontWeight.w800,
                         color: Colors.white,
-                        fontSize: 21),
+                        fontSize: 20),
                   ),
                 ],
               ),
