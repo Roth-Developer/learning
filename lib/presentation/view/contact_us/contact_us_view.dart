@@ -3,7 +3,7 @@ import 'package:flutter_aba_clone_learning/common/constant/color.dart';
 import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/custom_appbar.dart';
 import 'package:get/get.dart';
 
-class ContactUsPage extends StatelessWidget {
+class ContactUsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

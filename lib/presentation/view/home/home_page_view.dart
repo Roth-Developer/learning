@@ -3,13 +3,13 @@ import 'package:flutter_aba_clone_learning/common/constant/route.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/home_controller.dart';
 
 import 'package:flutter_aba_clone_learning/presentation/view/home/body/home_page_body.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/home_page_drawer.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/drawer_view.dart';
 import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/custom_appbar.dart';
 import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/icon_iteam.dart';
 
 import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
+class HomeView extends StatelessWidget {
   final HomeController homeController = Get.find();
   @override
   Widget build(BuildContext context) {

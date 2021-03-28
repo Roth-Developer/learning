@@ -8,7 +8,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 
 import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/custom_appbar.dart';
 
-class AccountPage extends StatelessWidget {
+class AccountView extends StatelessWidget {
   final AccountController accountController = Get.find();
   @override
   Widget build(BuildContext context) {

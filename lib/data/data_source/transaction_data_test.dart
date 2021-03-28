@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_aba_clone_learning/data/model/transaction_iteam_model.dart';
 
-class DataTest {
+class TransactionDataTest {
   static List<TransactionIteamModel> demoTransactionIteam = [
     TransactionIteamModel(
       image: 'assets/image/cellcard2.jpg',

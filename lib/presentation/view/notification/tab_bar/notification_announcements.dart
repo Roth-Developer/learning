@@ -1,18 +1,26 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_aba_clone_learning/presentation/controller/notification_controller.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/notification/accouncement_iteam.dart';
+import 'package:get/get.dart';
 
 class NotificationAnnouncements extends StatelessWidget {
+  final NotificationController notificationController = Get.find();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xffE7EFF2),
-      child: Column(
-        children: [
-          Container(
-            height: 100,
-            width: double.infinity,
-            color: Colors.white,
-          )
-        ],
+    return Obx(
+      () => CupertinoScrollbar(
+        child: Expanded(
+          child: ListView.builder(
+            itemCount: notificationController.listAnouncementIteams.length,
+            itemBuilder: (BuildContext context, int index) {
+              return AnnouncementItem(
+                notificationAnnouncementModel:
+                    notificationController.listAnouncementIteams[index],
+              );
+            },
+          ),
+        ),
       ),
     );
   }

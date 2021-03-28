@@ -24,7 +24,9 @@ Column homePageBody() {
             FuntionListCard(
               icon: Icons.credit_card_rounded,
               text: 'Cards',
-              onpress: () {},
+              onpress: () {
+                Get.toNamed(RouteName.card);
+              },
             ),
             SizedBox(
               width: 1,
@@ -32,7 +34,9 @@ Column homePageBody() {
             FuntionListCard(
               icon: Icons.monetization_on_rounded,
               text: 'Payments',
-              onpress: () {},
+              onpress: () {
+                Get.toNamed(RouteName.payment);
+              },
             ),
           ],
         ),
@@ -101,7 +105,7 @@ Column homePageBody() {
         color: Color(0xff0CBAD5),
         text1: 'Quick Transfer',
         text2: 'create your templates here to make transfer quicker',
-        icon: Icons.compare_arrows_rounded,
+        icon: Icons.autorenew_rounded,
         onpress: () {},
       ),
       QuickTransferBar(

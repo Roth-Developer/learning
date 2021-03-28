@@ -16,9 +16,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   CustomAppBar(
       {@required this.title,
-      this.listIcon,
-      this.leftIcon,
-      this.leftIconOnPress})
+      @required this.listIcon,
+      this.leftIcon = Icons.arrow_back_ios,
+      @required this.leftIconOnPress})
       : preferredSize = Size.fromHeight(50);
 
   @override

@@ -27,6 +27,7 @@ dependencies:
   get: ^3.25.6
   pie_chart: ^4.0.1
   percent_indicator: ^2.1.9+1
+  expandable: ^4.1.4
 
 dev_dependencies:
   flutter_test:

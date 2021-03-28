@@ -48,12 +48,12 @@ class QuickTransferBar extends StatelessWidget {
                 ),
               ),
               Positioned(
-                right: 0,
-                bottom: 0,
+                right: -50,
+                bottom: -50,
                 child: Icon(
                   icon,
                   color: Colors.white60,
-                  size: 80,
+                  size: 190,
                 ),
               )
             ],

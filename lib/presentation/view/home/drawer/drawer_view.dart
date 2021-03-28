@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/body/reuseble_listtile.dart';
+import 'package:flutter_aba_clone_learning/common/constant/route.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/reuseble_listtile.dart';
+import 'package:get/get.dart';
 
 Drawer homePageDrawer() {
   return Drawer(
@@ -59,20 +61,27 @@ Drawer homePageDrawer() {
           ReusebleListtile(
             icon: Icons.schedule,
             text: 'Scedule',
+            onPress: () {
+              Get.toNamed(RouteName.schedulepayment);
+            },
           ),
           ReusebleListtile(
+            onPress: () {},
             icon: Icons.location_on_outlined,
             text: 'Location ABA PAY',
           ),
           ReusebleListtile(
+            onPress: () {},
             icon: Icons.monetization_on,
             text: 'Exchange Rate',
           ),
           ReusebleListtile(
+            onPress: () {},
             icon: Icons.phone_in_talk_outlined,
             text: 'Contact Us',
           ),
           ReusebleListtile(
+            onPress: () {},
             icon: Icons.settings,
             text: 'Setting',
           )
