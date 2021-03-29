@@ -14,9 +14,13 @@ class NotificationAnnouncements extends StatelessWidget {
           child: ListView.builder(
             itemCount: notificationController.listAnouncementIteams.length,
             itemBuilder: (BuildContext context, int index) {
-              return AnnouncementItem(
-                notificationAnnouncementModel:
-                    notificationController.listAnouncementIteams[index],
+              return GestureDetector(
+                onTap: () => notificationController.selectAnnouncement(
+                    notificationController.listAnouncementIteams[index]),
+                child: AnnouncementItem(
+                  notificationAnnouncementModel:
+                      notificationController.listAnouncementIteams[index],
+                ),
               );
             },
           ),

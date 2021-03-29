@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_aba_clone_learning/data/data_source/transaction_data_test.dart';
 import 'package:flutter_aba_clone_learning/data/data_source/anouncement_data_test.dart';
+import 'package:flutter_aba_clone_learning/data/model/announcement_iteam_model.dart';
 
 import 'package:get/get.dart';
 
@@ -26,5 +27,9 @@ class NotificationController extends GetxController {
     listAnouncementIteams.clear();
     var list = await AnoucementDataTest.demoAnouncement();
     listAnouncementIteams.assignAll(list);
+  }
+
+  selectAnnouncement(NotificationAnnouncementModel model) {
+    print(model.title + model.dateTime);
   }
 }
