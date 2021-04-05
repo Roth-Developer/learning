@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/addnew_schedule_controller.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/listtile/schedule_payment/float_action_button/addnew_schedul/greyline.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/listtile/schedule_payment/float_action_button/addnew_schedul/schedule_option_iteam.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/listtile/schedule_payment/float_action_button/addnew_schedul/schedule_option_title.dart';
+
 import 'package:get/get.dart';
+
+import '../../../widget/greyline.dart';
+import 'schedule_option_iteam.dart';
+import 'schedule_option_title.dart';
 
 Future<Object> scheduleDialog(BuildContext context) {
   final AddNewScheduleController addNewScheduleController = Get.find();
@@ -29,7 +31,7 @@ Future<Object> scheduleDialog(BuildContext context) {
                 ScheduleOptionIteam(
                   onpress: () {
                     Get.back();
-                    addNewScheduleController.scheduleOptionController.text =
+                    addNewScheduleController.tecSelectSchedule.text =
                         'One time';
                   },
                   title: 'One time',
@@ -38,8 +40,7 @@ Future<Object> scheduleDialog(BuildContext context) {
                 ScheduleOptionIteam(
                   onpress: () {
                     Get.back();
-                    addNewScheduleController.scheduleOptionController.text =
-                        'Weekly';
+                    addNewScheduleController.tecSelectSchedule.text = 'Weekly';
                   },
                   title: 'Weekly',
                 ),
@@ -47,8 +48,7 @@ Future<Object> scheduleDialog(BuildContext context) {
                 ScheduleOptionIteam(
                   onpress: () {
                     Get.back();
-                    addNewScheduleController.scheduleOptionController.text =
-                        'Monthly';
+                    addNewScheduleController.tecSelectSchedule.text = 'Monthly';
                   },
                   title: 'Monthly',
                 ),

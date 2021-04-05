@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/schedule_controller.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/listtile/schedule_payment/schedule_payment_iteam.dart';
 
 import 'package:get/get.dart';
+
+import 'schedule_payment_iteam.dart';
 
 class SchedulePaymentListViewBuilder extends StatelessWidget {
   const SchedulePaymentListViewBuilder({

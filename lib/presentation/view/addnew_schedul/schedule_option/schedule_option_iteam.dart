@@ -12,29 +12,29 @@ class ScheduleOptionIteam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        child: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 15),
-              child: GestureDetector(
-                onTap: onpress,
+      child: GestureDetector(
+        onTap: onpress,
+        child: Container(
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 15),
                 child: Icon(
                   Icons.radio_button_off,
                   color: Colors.grey,
                   size: 22,
                 ),
               ),
-            ),
-            Text(
-              title,
-              style: TextStyle(
-                  inherit: false,
-                  color: Colors.black54,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600),
-            )
-          ],
+              Text(
+                title,
+                style: TextStyle(
+                    inherit: false,
+                    color: Colors.black54,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -9,16 +9,16 @@ import 'package:flutter_aba_clone_learning/di/notification_binding.dart';
 import 'package:flutter_aba_clone_learning/di/payment_binding.dart';
 import 'package:flutter_aba_clone_learning/di/schedule_binding.dart';
 import 'package:flutter_aba_clone_learning/presentation/view/account/account_view.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/addnew_schedul/addnew_schedule.view.dart';
 import 'package:flutter_aba_clone_learning/presentation/view/card/card_view.dart';
 import 'package:flutter_aba_clone_learning/presentation/view/contact_us/contact_us_view.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/listtile/schedule_payment/schdule_payment_view.dart';
 
 import 'package:flutter_aba_clone_learning/presentation/view/home/home_page_view.dart';
 import 'package:flutter_aba_clone_learning/presentation/view/notification/notificantion_view.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/schedule_payment/schdule_payment_view.dart';
 import 'package:flutter_aba_clone_learning/presentation/widget/test.dart';
 import 'package:get/get.dart';
 
-import 'presentation/view/home/drawer/listtile/schedule_payment/float_action_button/addnew_schedul/addnew_schedule.view.dart';
 import 'presentation/view/payment/payment_view.dart';
 
 void main() {

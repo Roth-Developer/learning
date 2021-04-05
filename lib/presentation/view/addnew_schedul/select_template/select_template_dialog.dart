@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_aba_clone_learning/presentation/controller/addnew_schedule_controller.dart';
 
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/listtile/schedule_payment/float_action_button/addnew_schedul/schedule_option_title.dart';
-
-import 'package:flutter_aba_clone_learning/presentation/view/home/drawer/listtile/schedule_payment/float_action_button/addnew_schedul/select_template_iteam.dart';
 import 'package:get/get.dart';
+
+import '../schedule_option/schedule_option_title.dart';
+import 'select_template_iteam.dart';
 
 Future<Object> selectTemplateDialog(BuildContext context) {
   final AddNewScheduleController addNewScheduleController = Get.find();
@@ -23,25 +23,27 @@ Future<Object> selectTemplateDialog(BuildContext context) {
           height: MediaQuery.of(context).size.height / 3.7,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(10)),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                ScheduleOptionTitle(
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 30),
+                child: ListView.builder(
+                  itemCount: addNewScheduleController.listTemplateIteams.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return SelectTemplateIteam(
+                      templateModel:
+                          addNewScheduleController.listTemplateIteams[index],
+                    );
+                  },
+                ),
+              ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: ScheduleOptionTitle(
                   title: 'Select Template',
                 ),
-                Column(
-                  children: [
-                    ...List.generate(
-                      addNewScheduleController.listTemplateIteams.length,
-                      (index) => SelectTemplateIteam(
-                        templateModel:
-                            addNewScheduleController.listTemplateIteams[index],
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       );
