@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/notification_controller.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/notification/accouncement_iteam.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/notification/_accouncement_iteam.dart';
 import 'package:get/get.dart';
 
 class NotificationAnnouncements extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_aba_clone_learning/presentation/controller/notification_controller.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/notification/transaction_iteam.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/notification/_transaction_iteam.dart';
 import 'package:get/get.dart';
 
 class NotificationTransaction extends StatelessWidget {
