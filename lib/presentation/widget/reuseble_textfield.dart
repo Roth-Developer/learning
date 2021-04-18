@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/addnew_schedule_controller.dart';
 
 class ReusebleTextField extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final IconData rightIcon;
-  final TextEditingController tc;
-  final Function onpress;
+  final IconData? icon;
+  final String? title;
+  final IconData? rightIcon;
+  final TextEditingController? tc;
+  final Function? onpress;
   final bool readonly;
-  final TextInputType textInputType;
+  final TextInputType? textInputType;
   final double vertical;
   final double horizontal;
 
   const ReusebleTextField({
-    Key key,
-    @required this.addNewScheduleController,
+    Key? key,
+    required this.addNewScheduleController,
     this.icon,
     this.title,
     this.onpress,
@@ -36,7 +36,7 @@ class ReusebleTextField extends StatelessWidget {
         height: 50,
         child: TextField(
           keyboardType: textInputType,
-          onTap: onpress,
+          onTap: onpress as void Function()?,
           controller: tc,
           readOnly: readonly,
           style: TextStyle(

@@ -3,6 +3,7 @@ import 'package:flutter_aba_clone_learning/common/constant/color.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/home_controller.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final HomeController homeController = Get.find();
@@ -15,10 +16,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Size preferredSize;
 
   CustomAppBar(
-      {@required this.title,
-      @required this.listIcon,
+      {required this.title,
+      required this.listIcon,
       this.leftIcon = Icons.arrow_back_ios,
-      @required this.leftIconOnPress})
+      required this.leftIconOnPress})
       : preferredSize = Size.fromHeight(50);
 
   @override
@@ -41,15 +42,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                         leftIcon,
                         color: Colors.white,
                       ),
-                      onPressed: leftIconOnPress,
+                      onPressed: leftIconOnPress as void Function()?,
                     ),
                   ),
                   Text(
                     title,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                        fontSize: 20),
+                    style: GoogleFonts.roboto(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),

@@ -14,12 +14,12 @@ class AddNewScheduleController extends GetxController {
   var listCardIteams = [].obs;
   var listTemplateIteams = [].obs;
 
-  TextEditingController tecSelectAccount;
-  TextEditingController tecSelectTemplate;
-  TextEditingController tecAmount;
-  TextEditingController tecSelectSchedule;
-  TextEditingController tecDate;
-  TextEditingController tecTime;
+  TextEditingController? tecSelectAccount;
+  TextEditingController? tecSelectTemplate;
+  TextEditingController? tecAmount;
+  TextEditingController? tecSelectSchedule;
+  TextEditingController? tecDate;
+  TextEditingController? tecTime;
 
   @override
   void onInit() {
@@ -38,12 +38,12 @@ class AddNewScheduleController extends GetxController {
 
   @override
   void onClose() {
-    tecSelectAccount.dispose();
-    tecSelectTemplate.dispose();
-    tecAmount.dispose();
-    tecSelectSchedule.dispose();
-    tecDate.dispose();
-    tecTime.dispose();
+    tecSelectAccount!.dispose();
+    tecSelectTemplate!.dispose();
+    tecAmount!.dispose();
+    tecSelectSchedule!.dispose();
+    tecDate!.dispose();
+    tecTime!.dispose();
 
     super.onClose();
   }
@@ -61,17 +61,17 @@ class AddNewScheduleController extends GetxController {
   }
 
   selectAccount(String text) {
-    tecSelectAccount.text = text;
+    tecSelectAccount!.text = text;
   }
 
   selectTemplate(String text) {
-    tecSelectTemplate.text = text;
+    tecSelectTemplate!.text = text;
   }
 
   DateTime selectedDate = DateTime.now();
 
   Future<void> selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
+    final DateTime? picked = await showDatePicker(
         context: context,
         initialDate: selectedDate,
         firstDate: DateTime(2015, 8),
@@ -79,21 +79,21 @@ class AddNewScheduleController extends GetxController {
     if (picked != null) {
       selectedDate = picked;
 
-      tecDate.text = DateFormat.yMMMd().format(picked);
+      tecDate!.text = DateFormat.yMMMd().format(picked);
     }
   }
 
   TimeOfDay selectedTime = TimeOfDay.now();
 
   Future<void> selectTime(BuildContext context) async {
-    final TimeOfDay picked = await showTimePicker(
+    final TimeOfDay? picked = await showTimePicker(
       context: context,
       initialTime: selectedTime,
     );
 
     if (picked != null) {
       selectedTime = picked;
-      tecTime.text = picked.format(context);
+      tecTime!.text = picked.format(context);
     }
   }
 

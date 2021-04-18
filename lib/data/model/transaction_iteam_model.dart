@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 
 class TransactionIteamModel {
-  final String image;
-  final String title;
-  final String dateTime;
-  final String description;
-  final Color color;
+  final String? image;
+  final String? title;
+  final String? dateTime;
+  final String? description;
+  final Color? color;
 
   TransactionIteamModel({
     this.color,

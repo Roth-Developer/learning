@@ -1,9 +1,9 @@
 class NotificationAnnouncementModel {
-  final String backgroundImage;
-  final String title;
-  final String dateTime;
-  final String description;
-  final String detail;
+  final String? backgroundImage;
+  final String? title;
+  final String? dateTime;
+  final String? description;
+  final String? detail;
 
   NotificationAnnouncementModel({
     this.backgroundImage,

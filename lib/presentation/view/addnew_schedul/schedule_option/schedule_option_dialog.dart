@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/addnew_schedule_controller.dart';
-
 import 'package:get/get.dart';
-
 import '../../../widget/greyline.dart';
-import 'schedule_option_iteam.dart';
-import 'schedule_option_title.dart';
+import '_schedule_option_iteam.dart';
+import '_schedule_option_title.dart';
 
-Future<Object> scheduleDialog(BuildContext context) {
+Future<Object?> scheduleDialog(BuildContext context) {
   final AddNewScheduleController addNewScheduleController = Get.find();
   return showGeneralDialog(
       context: context,
@@ -31,7 +29,7 @@ Future<Object> scheduleDialog(BuildContext context) {
                 ScheduleOptionIteam(
                   onpress: () {
                     Get.back();
-                    addNewScheduleController.tecSelectSchedule.text =
+                    addNewScheduleController.tecSelectSchedule!.text =
                         'One time';
                   },
                   title: 'One time',
@@ -40,7 +38,7 @@ Future<Object> scheduleDialog(BuildContext context) {
                 ScheduleOptionIteam(
                   onpress: () {
                     Get.back();
-                    addNewScheduleController.tecSelectSchedule.text = 'Weekly';
+                    addNewScheduleController.tecSelectSchedule!.text = 'Weekly';
                   },
                   title: 'Weekly',
                 ),
@@ -48,7 +46,8 @@ Future<Object> scheduleDialog(BuildContext context) {
                 ScheduleOptionIteam(
                   onpress: () {
                     Get.back();
-                    addNewScheduleController.tecSelectSchedule.text = 'Monthly';
+                    addNewScheduleController.tecSelectSchedule!.text =
+                        'Monthly';
                   },
                   title: 'Monthly',
                 ),

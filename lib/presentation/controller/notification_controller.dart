@@ -6,7 +6,7 @@ import 'package:flutter_aba_clone_learning/data/model/announcement_iteam_model.d
 import 'package:get/get.dart';
 
 class NotificationController extends GetxController {
-  TabController tabController;
+  TabController? tabController;
   var listTransactionIteams = [].obs;
   var listAnouncementIteams = [].obs;
 
@@ -30,6 +30,6 @@ class NotificationController extends GetxController {
   }
 
   selectAnnouncement(NotificationAnnouncementModel model) {
-    print(model.title + model.dateTime);
+    print(model.title! + model.dateTime!);
   }
 }

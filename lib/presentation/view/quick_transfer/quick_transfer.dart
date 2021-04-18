@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_aba_clone_learning/presentation/controller/payment_controller.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/payment/_payment_iteam.dart';
+import 'package:flutter_aba_clone_learning/presentation/controller/quick_transfer_controller.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/quick_transfer/_quick_transfer_iteam.dart';
 import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/custom_appbar.dart';
-import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/icon_iteam.dart';
 import 'package:get/get.dart';
 
-class PaymentView extends StatelessWidget {
-  final PaymentController paymentController = Get.find();
+class QuickTransferView extends StatelessWidget {
+  final QuickTransferController quickTransferController = Get.find();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xffE7EFF2),
-      appBar: CustomAppBar(
-          title: 'ABA\' Payments',
-          listIcon: [
-            IconIteam(
-              icon: Icons.search,
-            )
-          ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: CustomAppBar(
+          title: 'ABA\' Quick Transfer',
           leftIconOnPress: () {
             Get.back();
-          }),
-      body: Column(
-        children: [
-          _header(),
-          SizedBox(height: 5),
-          _listView(),
-        ],
+          },
+          listIcon: [],
+        ),
+        body: Column(
+          children: [
+            _header(context),
+            _listView(),
+          ],
+        ),
       ),
     );
   }
@@ -35,10 +31,11 @@ class PaymentView extends StatelessWidget {
     return Obx(
       () => Expanded(
         child: ListView.builder(
-          itemCount: paymentController.listPaymentIteams.length,
+          itemCount: quickTransferController.listQuickTransferIteam.length,
           itemBuilder: (BuildContext context, int index) {
-            return PaymentIteam(
-              paymentModel: paymentController.listPaymentIteams[index],
+            return QuickTransferIteam(
+              quickTransferModel:
+                  quickTransferController.listQuickTransferIteam[index],
             );
           },
         ),
@@ -46,11 +43,11 @@ class PaymentView extends StatelessWidget {
     );
   }
 
-  Container _header() {
+  Container _header(BuildContext context) {
     return Container(
-      height: 150,
+      height: MediaQuery.of(context).size.height * 0.20,
       width: double.infinity,
-      color: Color(0xffED5250),
+      color: Color(0xff00BCD5),
       child: Stack(
         children: [
           Padding(
@@ -60,7 +57,7 @@ class PaymentView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Payments',
+                  'Quick Transfers',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
@@ -71,7 +68,7 @@ class PaymentView extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  'Top up your phone, pay your bills or your \nchildren\'s school fee free of charge at any \ntime.',
+                  'Save here ABA accounts of your relatives,\nfriends or business partners, to whom you\ntransfer funds frequently.',
                   style: TextStyle(color: Colors.white, fontSize: 13),
                 ),
               ],
@@ -81,7 +78,7 @@ class PaymentView extends StatelessWidget {
             right: -50,
             bottom: -50,
             child: Icon(
-              Icons.monetization_on_outlined,
+              Icons.autorenew_rounded,
               color: Colors.white60,
               size: 200,
             ),

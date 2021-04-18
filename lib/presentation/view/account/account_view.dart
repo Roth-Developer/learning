@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_aba_clone_learning/presentation/controller/account_controller.dart';
-
+import 'package:flutter_aba_clone_learning/presentation/view/account/_account_iteam.dart';
 import 'package:get/get.dart';
-
 import 'package:percent_indicator/percent_indicator.dart';
-
 import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/custom_appbar.dart';
 
 class AccountView extends StatelessWidget {
@@ -13,7 +11,6 @@ class AccountView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE7EFF2),
       appBar: CustomAppBar(
         title: 'ABA\' Accounts',
         leftIcon: Icons.arrow_back_ios,
@@ -24,98 +21,8 @@ class AccountView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          accountSummaryBar(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 40),
-            child: Row(
-              children: [
-                Container(
-                  width: 10,
-                  height: 95,
-                  decoration: BoxDecoration(
-                    color: Color(0xff00BCD5),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(5),
-                      bottomLeft: Radius.circular(5),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 95,
-                  width: 385,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(5),
-                        bottomRight: Radius.circular(5),
-                      ),
-                      boxShadow: [BoxShadow(blurRadius: 0.3)]),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'General use',
-                              style: TextStyle(
-                                  fontSize: 17,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              '001 363 567 / Savings',
-                              style: TextStyle(color: Colors.black54),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: Icon(
-                              Icons.more_horiz_rounded,
-                              size: 30,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 15, horizontal: 8),
-                            child: Row(
-                              children: [
-                                Text(
-                                  '10,79',
-                                  style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  'USD',
-                                  style: TextStyle(color: Colors.black54),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
+          _headerBar(),
+          AccountIteam(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -129,7 +36,7 @@ class AccountView extends StatelessWidget {
     );
   }
 
-  Container accountSummaryBar() {
+  Container _headerBar() {
     return Container(
       height: 175,
       width: double.infinity,
@@ -137,13 +44,16 @@ class AccountView extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Row(
-          children: [circleSummaryBar(), totalMoney()],
+          children: [
+            _circleSummaryBar(),
+            _totalMoney(),
+          ],
         ),
       ),
     );
   }
 
-  CircularPercentIndicator circleSummaryBar() {
+  CircularPercentIndicator _circleSummaryBar() {
     return CircularPercentIndicator(
       radius: 130.0,
       lineWidth: 15.0,
@@ -159,7 +69,7 @@ class AccountView extends StatelessWidget {
     );
   }
 
-  Column totalMoney() {
+  Column _totalMoney() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,

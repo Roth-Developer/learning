@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 
-class PaymentModel {
+class TransferModel {
   final Color? color;
   final IconData? icon;
   final String? title;
 
-  PaymentModel({
+  TransferModel({
     this.color,
     this.icon,
     this.title,
