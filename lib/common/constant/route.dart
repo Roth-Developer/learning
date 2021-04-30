@@ -11,4 +11,7 @@ class RouteName {
   static const newaccount = '/newaccount';
   static const transfer = '/transfer';
   static const quicktransfer = '/quicktransfer';
+  static const quickpayment = '/quickpayment';
+  static const cashtoatm = '/cashtoatm';
+  static const scanqr = '/scanqr';
 }

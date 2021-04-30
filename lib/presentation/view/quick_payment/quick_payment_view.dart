@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_aba_clone_learning/presentation/controller/quick_transfer_controller.dart';
-import 'package:flutter_aba_clone_learning/presentation/view/quick_transfer/_quick_transfer_iteam.dart';
+import 'package:flutter_aba_clone_learning/presentation/controller/quick_payment_controller.dart';
+import 'package:flutter_aba_clone_learning/presentation/view/quick_payment/_quick_payment_iteam.dart';
 import 'package:flutter_aba_clone_learning/presentation/widget/app_bar/custom_appbar.dart';
 import 'package:get/get.dart';
 
-class QuickTransferView extends StatelessWidget {
-  final QuickTransferController quickTransferController = Get.find();
+class QuickPaymentView extends StatelessWidget {
+  final QuickPaymentController quickPaymentController = Get.find();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: CustomAppBar(
-          title: 'ABA\' Quick Transfer',
-          leftIconOnPress: () {
-            Get.back();
-          },
-          listIcon: [],
-        ),
-        body: Column(
-          children: [
-            _header(context),
-            _listView(),
-          ],
-        ),
+    return Scaffold(
+      appBar: CustomAppBar(
+        title: 'ABA\' Quick Payment',
+        listIcon: [],
+        leftIconOnPress: () {
+          Get.back();
+        },
+      ),
+      body: Column(
+        children: [
+          _header(context),
+          _listView(),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xffED5250),
+        child: Icon(Icons.add),
+        onPressed: () {},
       ),
     );
   }
@@ -31,11 +34,11 @@ class QuickTransferView extends StatelessWidget {
     return Obx(
       () => Expanded(
         child: ListView.builder(
-          itemCount: quickTransferController.listQuickTransferIteam.length,
+          itemCount: quickPaymentController.listQuickPaymentIteam.length,
           itemBuilder: (BuildContext context, int index) {
-            return QuickTransferIteam(
-              quickTransferModel:
-                  quickTransferController.listQuickTransferIteam[index],
+            return QuickPaymentIteam(
+              quickPaymentModel:
+                  quickPaymentController.listQuickPaymentIteam[index],
             );
           },
         ),
@@ -47,7 +50,7 @@ class QuickTransferView extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.20,
       width: double.infinity,
-      color: Color(0xff00BCD5),
+      color: Color(0xffED5250),
       child: Stack(
         children: [
           Padding(
@@ -57,7 +60,7 @@ class QuickTransferView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Quick Transfers',
+                  'Quick Payment',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
@@ -68,7 +71,7 @@ class QuickTransferView extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  'Save here ABA accounts of your relatives,\nfriends or business partners, to whom you\ntransfer funds frequently.',
+                  'Save your favorite service providers to make\npayment process easy and fast.',
                   style: TextStyle(color: Colors.white70, fontSize: 13),
                 ),
               ],
@@ -78,7 +81,7 @@ class QuickTransferView extends StatelessWidget {
             right: -50,
             bottom: -50,
             child: Icon(
-              Icons.autorenew_rounded,
+              Icons.monetization_on_outlined,
               color: Colors.white60,
               size: 200,
             ),

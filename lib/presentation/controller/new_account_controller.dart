@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class NewAccountController extends GetxController {
   var listNewAccountIteams = [].obs;
-
+  
   @override
   void onInit() {
     loadNewAccount();

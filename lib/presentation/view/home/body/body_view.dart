@@ -60,7 +60,9 @@ Column body() {
             CardIteam(
               icon: Icons.atm_rounded,
               text: 'Cash to ATM',
-              onpress: () {},
+              onpress: () {
+                Get.toNamed(RouteName.cashtoatm);
+              },
             ),
             SizedBox(
               width: 1,
@@ -84,7 +86,9 @@ Column body() {
             CardIteam(
               icon: Icons.qr_code_scanner_rounded,
               text: 'Scan QR',
-              onpress: () {},
+              onpress: () {
+                Get.toNamed(RouteName.scanqr);
+              },
             ),
             SizedBox(
               width: 1,
@@ -119,7 +123,9 @@ Column body() {
         text1: 'Quick Payment',
         text2: 'paying your bills with templates is faster',
         icon: Icons.monetization_on_outlined,
-        onpress: () {},
+        onpress: () {
+          Get.toNamed(RouteName.quickpayment);
+        },
       ),
     ],
   );
